@@ -1,0 +1,19 @@
+.DialogContainerComponentStyle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    pointer-events: auto;
+    width: 31.625em;
+    min-height: 14.125em;
+    z-index: 60;
+    box-shadow: #00000040 0 0.313em 1.25em 0;
+    outline: #ffffff40 solid 0.063em;
+    padding: 2em;
+    margin: auto;
+}
+  
+.DialogContainerComponentStyle-containerCaution {
+    background: radial-gradient(100% 100% at 0% 0%, #ffcc00bf 0%, #fc00 100%), #001926bf;
+    backdrop-filter: blur(12.5px);
+}

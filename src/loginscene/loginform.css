@@ -1,0 +1,143 @@
+.CommonEntrance-loginFormTitle {
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 1.125em;
+    text-transform: uppercase;
+    cursor: default;
+    font-weight: 500;
+    padding-bottom: 1em;
+}
+
+input.CommonEntrance-loginFormInput {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    font: normal 400 1.25em/normal Rubik;
+    position: relative;
+    width: 15em;
+    height: 3.1875em;
+    padding-left: 0.5625em;
+    padding-right: 2.5em;
+    border: 0.0625em solid #bebebe;
+    background-color: transparent;
+    border-radius: 0.5em;
+    box-sizing: border-box;
+    color: #fff;
+    backdrop-filter: blur(12.5px);
+}
+
+input.CommonEntrance-loginFormInput:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+input.CommonEntrance-loginFormInput:hover {
+    background: linear-gradient(90deg, #fff0, #ffffff26);
+}
+
+input.CommonEntrance-loginFormInput::placeholder{
+    color: #fff6;
+    text-transform: uppercase;
+}
+
+input.CommonEntrance-loginFormInput.CommonEntrance-loginFormInputBlocked{
+    background: #fe264a26 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle opacity='0.4' cx='12' cy='12' r='12' fill='%23FF6666'/%3E%3Ccircle cx='12' cy='12' r='9' fill='%23FF6666'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.5 16.5V15H13.5V16.5H10.5ZM10.5 7.5L10.5 13.5H11.5C12.6046 13.5 13.5 12.6046 13.5 11.5V7.5H10.5Z' fill='%23001926'/%3E%3C/svg%3E") calc(100% - 0.75em) center / 1.25em no-repeat;
+    color: #f66;
+}
+
+input.CommonEntrance-loginFormInput.CommonEntrance-loginFormInputBlocked:hover+::before{
+    content: "*Неверное имя";
+    position: absolute;
+    min-width: calc(8.5em / 0.75);
+    width: calc(8.5em / 0.75);
+    min-height: 4em;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f66;
+    border-radius: calc(0.25em/0.75);
+    top: calc(-4.4875em/0.75);
+    right: calc(-11.125em/0.75);
+    cursor: default;
+    z-index: 2;
+    padding-inline: calc(0.5em/0.75);
+    text-transform: uppercase;
+    font: normal 500 0.75em/normal Rubik;
+    color: #001926;
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+
+input.CommonEntrance-loginFormInput.CommonEntrance-loginFormInputBlocked:hover+::after{
+    content: "";
+    position: absolute;
+    width: 1em;
+    height: 0.5em;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='8' viewBox='0 0 16 8' fill='none'%3E%3Cpath d='M0 8H16L9.41421 1.41421C8.63316 0.633163 7.36684 0.633165 6.58579 1.41421L0 8Z' fill='%23FF6666'/%3E%3C/svg%3E") center / contain no-repeat;
+    top: -3.25em;
+    right: -1.925em;
+    transform: rotate(-90deg);
+}
+
+label.CommonEntrance-loginFormRememberMe{
+    display: flex;
+    align-items: center;
+    gap: 0.938em;
+    height: 2.25em;
+    width: 18.75em;
+    font: normal 400 1em/normal Rubik;
+    color: #fff;
+    margin-block: 1em;
+    position: relative;
+}
+
+input.CommonEntrance-loginFormRememberMeCheckbox{
+    appearance: unset;
+    width: 2.375em;
+    height: 2.375em;
+    box-sizing: border-box;
+    background: #ffffff1a center / 1.5em no-repeat;
+    border: 0.0625em solid #bebebe;
+    cursor: pointer;
+    border-radius: 20%;
+    backdrop-filter: blur(12.5px);
+    margin: 0;
+    padding: 0;
+}
+
+input.CommonEntrance-loginFormRememberMeCheckbox:checked{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 19.5L0 10.5H4.5L9 15L19.5 4.5H24L9 19.5Z' fill='%2376FF33'/%3E%3C/svg%3E");
+}
+
+button.CommonEntrance-loginFormButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: normal 700 1em/normal Rubik;
+    width: 18.75em;
+    height: 3em;
+    border-radius: 0.5em;
+    border: 0;
+    background-color: #ffffff;
+    color: #00000080;
+    text-shadow: #00000080 0 0 0.25em;
+    backdrop-filter: blur(12.5px);
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+button.CommonEntrance-loginFormButton.CommonEntrance-loginFormButtonActive{
+    opacity: 1;
+    pointer-events: auto;
+    color: #000;
+    text-shadow: #0000 0 0 0.25em;
+    box-shadow: #bfd5ff80 0 0 0 0.0625em;
+}
+
+button.CommonEntrance-loginFormButton.CommonEntrance-loginFormButtonActive:hover{
+    background-color: #76ff33;
+    box-shadow: #76ff3380 0 0 0 0.063em;
+    cursor: pointer;
+}

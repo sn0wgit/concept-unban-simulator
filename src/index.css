@@ -1,0 +1,19 @@
+body h1, body h2, body h3, body h4, body span, body p{
+  font-size: 1em;
+  color: #ffffff;
+  user-select: none;
+}
+
+a{
+  color: #76ff33;
+}
+
+input {
+  outline: none;
+  font-size: 1em;
+}
+
+img{
+  pointer-events: none;
+  user-select: none;
+}

@@ -1,0 +1,47 @@
+footer.CommonEntrance-footer{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    width: 100%;
+    height: 6em;
+    padding-left: 2.5em;
+    box-sizing: border-box;
+}
+
+img.CoomonEntrance-footerCopyrightImage{
+    width: 2.5em;
+    height: 2.5em;
+    margin-right: 1.25em;
+}
+
+.CommonEntrance-footerText{
+    height: 2.5em;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.125em;
+}
+
+p.CommonEntrance-footerTextAbout{
+    color: #ffffff80;
+    font: normal 400 0.875em/normal Rubik;
+    margin: 0;
+}
+
+p.CommonEntrance-footerTextLinks{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1em;
+    margin: 0;
+}
+
+p.CommonEntrance-footerTextLinks a{
+    color: #fff;
+    font: normal 400 1em/normal Rubik;
+    text-decoration-color: #fff0;
+}
+
+p.CommonEntrance-footerTextLinks a:hover{
+    text-decoration-color: #ffff;
+}

@@ -1,0 +1,9 @@
+.DialogContainerComponentStyle-footerContainer {
+    background-color: transparent;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+}

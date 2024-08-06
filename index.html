@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="notranslate" translate="no">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,viewport-fit=cover,initial-scale=1,user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes">
+    <title>CONCEPT (Tanki Online)</title>
+    <link rel="shortcut icon" href="///tankionline.com/favicon.ico">
+    <meta name="google" content="notranslate"/>
+    <meta name="renderer" content="webkit"/>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap');
+
+      html, body {
+        font-family: Rubik;
+        font-weight: 500;
+        background: radial-gradient(50% 100% at 50% 100%, #395673 0%, #001926 100%);
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        touch-action: none;
+        position: fixed;
+      }
+
+      img {
+        pointer-events: none;
+      }
+
+      #modal-root > div {
+        pointer-events: auto;
+      }
+
+      * {
+        -webkit-tap-highlight-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div id="preloader">
+        <style>
+          #preloader .logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 128px;
+            height: 124px;
+          }
+
+          .progress {
+            position: absolute;
+            bottom: 40px;
+            height: 30px;
+            width: 320px;
+            mix-blend-mode: lighten;
+            background: url('///tankionline.com/play/static/images/progress.d07ca56f.gif') no-repeat;
+            background-size: contain;
+            transform: translateX(-50%);
+            left: 50%;
+            @media screen and (max-width: 640px), (max-height: 480px) {
+            bottom: 20px;}
+          }
+
+          .loading-text {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-family: Rubik;
+            font-style: normal;
+            line-height: 30px;
+            text-transform: uppercase;
+            @media screen and (max-width: 640px), (max-height: 480px) {
+            bottom: 40px;}
+          }
+
+          #modal-root {
+            pointer-events: none;
+          }
+        </style>
+        <img class="logo" src="///tankionline.com/play/static/images/logo.e64f36db.svg">
+        <div class="progress"></div>
+        <div class="loading-text" id="loading-text">&nbsp;</div>
+      </div>
+    </div>
+    <noscript>
+      <div>
+        <img src="https://mc.yandex.ru/watch/10288858" style="position:absolute; left:-9999px;" alt=""/>
+      </div>
+    </noscript>
+    <script>
+      const loadingText = document.getElementById("loading-text");
+      loadingText.innerText = getLoadingText();
+
+      function getLoadingText() {
+        const localized = {
+          "en": "Loading",
+          "zh": "加载中",
+          "ru": "Загрузка",
+          "pt": "Carregando",
+          "pl": "Ładowanie",
+          "hy": "Բեռնում",
+          "es": "Cargando",
+          "de": "Laden"
+        };
+        const foundLang = window.navigator.languages
+          .map((lang) => lang.substr(0, 2).toLowerCase())
+          .find((lang) => lang in localized);
+        return (foundLang != null) ? localized[foundLang] : localized["en"];
+      }
+
+      function loadJs(jsUrl) {
+        const head = document.getElementsByTagName('head').item(0);
+        const script = document.createElement('script');
+        script.src = jsUrl;
+        script.async = true;
+        head.appendChild(script);
+      }
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

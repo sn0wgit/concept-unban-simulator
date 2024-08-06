@@ -1,0 +1,45 @@
+.DialogContainerComponentStyle-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: transparent;
+    width: 100%;
+    margin-left: 0;
+    position: relative;
+}
+  
+.DialogContainerComponentStyle-header h1 {
+    font-weight: 700;
+    font-size: 1.5em;
+    line-height: normal;
+    text-transform: uppercase;
+    margin: 0;
+}
+  
+.DialogContainerComponentStyle-containerForImg {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+    height: auto;
+    position: absolute;
+    right: 0.1875em;
+    -webkit-box-align: center;
+    -webkit-box-pack: start;
+}
+  
+.DialogContainerComponentStyle-imgClose {
+    width: 1.5em;
+    height: 1.5em;
+    align-self: center;
+    margin-left: 0.5em;
+    cursor: pointer;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M21 0L24 3L12 15L3 24L0 21L9 12L0 3L3 0L12 9L21 0ZM12 15H18L24 21L21 24L12 15Z' fill='white'/%3E%3C/svg%3E") center / cover no-repeat;
+    position: absolute;
+    right: 0;
+    opacity: 0.25;
+}
+
+.DialogContainerComponentStyle-imgClose:hover{
+    opacity: 1;
+}

@@ -1,0 +1,57 @@
+.MainEntranceLoginMethodsComponent-method{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 15em;
+    height: 17em;
+    margin-right: 1em;
+    margin-left: 1em;
+    cursor: pointer;
+}
+
+.MainEntranceLoginMethodsComponent-methodCircle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12em;
+    height: 12em;
+    padding: 1em;
+    background-color: #bcbcbc80;
+    backdrop-filter: blur(12.5px);
+    border-radius: 50%;
+    border: 0.176em solid #fff3;
+    background-clip: content-box;
+}
+
+.MainEntranceLoginMethodsComponent-method:hover .MainEntranceLoginMethodsComponent-methodCircle{
+    border-color: #fff;
+    background-color: #fff;
+    width: 13em;
+    height: 13em;
+    padding: 0.5em;
+}
+
+.MainEntranceLoginMethodsComponent-methodIcon, .MainEntranceLoginMethodsComponent-methodIconOnHover {
+    width: 3em;
+    height: 3em;
+}
+
+.MainEntranceLoginMethodsComponent-methodIconOnHover{
+    display: none;
+}
+
+.MainEntranceLoginMethodsComponent-method:hover .MainEntranceLoginMethodsComponent-methodIconOnHover {
+    display: block;
+}
+
+.MainEntranceLoginMethodsComponent-method:hover .MainEntranceLoginMethodsComponent-methodIcon {
+    display: none;
+}
+
+.MainEntranceLoginMethodsComponent-methodText {
+    margin-top: 1em;
+    font: normal 500 1.125em/normal Rubik;
+    color: #ffffffe6;
+    text-align: center;
+}

@@ -1,0 +1,21 @@
+button.greenButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14em;
+    height: 3em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    background-color: #76ff3340;
+    box-shadow: #76ff3380 0 0 0 1px;
+    color: rgb(118, 255, 51);
+    font: normal 700 1em/normal 'Rubik';
+    border: unset;
+    padding: 0;
+    text-transform: uppercase;
+    user-select: none;
+}
+  
+button.greenButton:hover {
+    box-shadow: #76ff33 0 0 0 2px;
+}

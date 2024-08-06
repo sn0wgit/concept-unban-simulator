@@ -1,0 +1,22 @@
+html {
+  font-size: max(min(1.48148vh, 1vw) * 1, 3px);
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.Common-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.Common-background{
+  background: url('/src/assets/background.4a9fffd6.webp') center / cover;
+}

@@ -1,0 +1,61 @@
+.ChatComponent-messagesMessage{
+    font: normal 400 1em/normal Rubik;
+    color: #fff;
+}
+
+.ChatComponent-messagesMessage.ChatComponent-messagesStatusMessage {
+    align-self: center;
+    padding: 0.25em 0.5em;
+    background-color: #ffffff26;
+    max-width: 50%;
+    border-radius: 1em;
+    user-select: none;
+    text-align: center;
+}
+
+.ChatComponent-messagesMessage:not(.ChatComponent-messagesStatusMessage){
+    display: flex;
+    width: auto;
+    max-width: min(55vw, 100%);
+    margin: 0 0.625em;
+    box-sizing: border-box;
+    border-radius: 0.5em;
+    padding: 0.25em 0.5em;
+    background-color: #ffffff26;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.25em;
+}
+
+.ChatComponent-messagesMessage:first-child {
+    margin-top: 0.5em;
+}
+
+.ChatComponent-messagesMessage:last-child {
+    margin-bottom: 0.5em;
+}
+
+.ChatComponent-messagesMessage.ChatComponent-messagesMessageModerator{
+    align-self: flex-start;
+    animation: 3s linear 0s 1 normal none running answerAwait;
+}
+
+@keyframes answerAwait {
+    from{
+        display: none;
+    }
+    to {
+        display: none;
+    }
+}
+
+.ChatComponent-messagesMessage.ChatComponent-messagesMessageUser{
+    align-self: flex-end;
+}
+
+img.ChatComponent-messagesMessageAuthorPicture {
+    float: left;
+    width: 3em;
+    height: 3em;
+    margin: 0.25em 0.5em 0.25em 0;
+}

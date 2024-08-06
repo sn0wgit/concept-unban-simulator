@@ -1,0 +1,26 @@
+.ChatComponent-messages{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-grow: 1;
+    gap: 0.5em;
+    max-height: calc(100% - 8em);
+    width: 100%;
+    overflow-y: auto;
+}
+.ChatComponent-messages::-webkit-scrollbar {
+    width: 1.5em;
+}
+
+.ChatComponent-messages::-webkit-scrollbar-track {
+    background: #0000;
+    margin: 0.25em;
+}
+
+.ChatComponent-messages::-webkit-scrollbar-thumb {
+    background: #ffffff1a content-box;
+    border-radius: 1em;
+    border: 0.5em solid #fff0;
+    width: 0.5em;
+}

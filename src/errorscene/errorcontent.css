@@ -1,0 +1,53 @@
+.DialogContainerComponentStyle-contentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-box-align: center;
+    -webkit-box-pack: start;
+}
+  
+.SystemMessageStyle-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+}
+  
+.DialogContainerComponentStyle-contentContainer img {
+    align-self: center;
+}
+  
+.SystemMessageStyle-content img {
+    width: 5.313em;
+    height: 4.75em;
+}
+  
+.SystemMessageStyle-icon {
+    padding-top: 2.625em;
+}
+  
+.DialogContainerComponentStyle-contentContainer span {
+    text-align: center;
+    line-height: normal;
+    align-self: center;
+}
+  
+.SystemMessageStyle-message {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.9375em;
+    color: #ffffff;
+    margin-top: 1em;
+    margin-bottom: 3.188em;
+    margin-left: 0;
+    text-wrap: balance;
+}
