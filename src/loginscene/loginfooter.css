@@ -8,7 +8,7 @@ footer.CommonEntrance-footer{
     box-sizing: border-box;
 }
 
-img.CoomonEntrance-footerCopyrightImage{
+img.CommonEntrance-footerCopyrightImage{
     width: 2.5em;
     height: 2.5em;
     margin-right: 1.25em;
@@ -25,7 +25,7 @@ img.CoomonEntrance-footerCopyrightImage{
 
 p.CommonEntrance-footerTextAbout{
     color: #ffffff80;
-    font: normal 400 0.875em/normal Rubik;
+    font: normal 400 0.875em/normal "Rubik", "M PLUS 1p", sans-serif;
     margin: 0;
 }
 
@@ -38,7 +38,7 @@ p.CommonEntrance-footerTextLinks{
 
 p.CommonEntrance-footerTextLinks a{
     color: #fff;
-    font: normal 400 1em/normal Rubik;
+    font: normal 400 1em/normal "Rubik", "M PLUS 1p", sans-serif;
     text-decoration-color: #fff0;
 }
 

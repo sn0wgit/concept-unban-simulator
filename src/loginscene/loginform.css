@@ -13,7 +13,7 @@ input.CommonEntrance-loginFormInput {
     display: flex;
     align-items: stretch;
     justify-content: space-between;
-    font: normal 400 1.25em/normal Rubik;
+    font: normal 400 1.25em/normal "Rubik", "M PLUS 1p", sans-serif;
     position: relative;
     width: 15em;
     height: 3.1875em;
@@ -64,7 +64,7 @@ input.CommonEntrance-loginFormInput.CommonEntrance-loginFormInputBlocked:hover+:
     z-index: 2;
     padding-inline: calc(0.5em/0.75);
     text-transform: uppercase;
-    font: normal 500 0.75em/normal Rubik;
+    font: normal 500 0.75em/normal "Rubik", "M PLUS 1p", sans-serif;
     color: #001926;
     letter-spacing: 0.05em;
     text-align: center;
@@ -87,7 +87,7 @@ label.CommonEntrance-loginFormRememberMe{
     gap: 0.938em;
     height: 2.25em;
     width: 18.75em;
-    font: normal 400 1em/normal Rubik;
+    font: normal 400 1em/normal "Rubik", "M PLUS 1p", sans-serif;
     color: #fff;
     margin-block: 1em;
     position: relative;
@@ -115,7 +115,7 @@ button.CommonEntrance-loginFormButton{
     display: flex;
     align-items: center;
     justify-content: center;
-    font: normal 700 1em/normal Rubik;
+    font: normal 700 1em/normal "Rubik", "M PLUS 1p", sans-serif;
     width: 18.75em;
     height: 3em;
     border-radius: 0.5em;

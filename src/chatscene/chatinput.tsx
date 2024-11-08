@@ -7,26 +7,68 @@ function ChatInput(){
     const inheritedNewMessages = useContext(ChatMessagesContext)
     const setMessageList = inheritedNewMessages.setMessageList
     const messageList = inheritedNewMessages.messageList
+
     function handleInputButtonClick(){
-        if (document.querySelector<HTMLInputElement>("input.ChatComponent-inputField")!.value != ""){
-            setMessageList(messageList.concat(<ChatMessage key={messageList.length+1} author="user" message={document.querySelector<HTMLInputElement>(".ChatComponent-inputField")!.value} />))
-            const userInputedQuestion = <ChatMessage key={messageList.length+1} author="user" message={document.querySelector<HTMLInputElement>(".ChatComponent-inputField")!.value} />
-            const moderatorGeneratedAnswer = (
-                document.querySelector<HTMLInputElement>("input.ChatComponent-inputField")!.value.toLowerCase().includes("почему") ||
-                document.querySelector<HTMLInputElement>("input.ChatComponent-inputField")!.value.toLowerCase().includes("причина")
-            ) ? <ChatMessage key={messageList.length+2} author="moderator" message="потому что" />
-            : <ChatMessage key={messageList.length+2} author="moderator" message="Ваш запрос не был понят. Переформулируйте его и попробуйте снова." />
-            setMessageList(messageList.concat(userInputedQuestion, moderatorGeneratedAnswer))
-            document.querySelector<HTMLInputElement>(".ChatComponent-inputField")!.classList.add("ChatComponent-inputFieldAwait")
+
+        const inputField = document.querySelector<HTMLInputElement>("input.ChatComponent-inputField");
+
+        if (inputField!.value != ""){
+            const replies = {
+                "почему": "потому что",
+                "причина": "потому что",
+                "я не виновен": "Мы рассмотрели вашу заявку и согласны с вашим мнением. Ваш аккаунт будет восстановлен в течении 24 часов. Просим прощения за предоставленные неудобства.",
+                "unban": "Мы рассмотрели вашу заявку и согласны с вашим мнением. Ваш аккаунт будет восстановлен в течении 24 часов. Просим прощения за предоставленные неудобства."
+            }
+
+            setMessageList(
+                messageList.concat(
+                    <ChatMessage
+                        key={messageList.length+1}
+                        author="user"
+                        message={
+                            inputField!.value
+                        }
+                    />
+                )
+            )
+            const userInputedQuestion = <ChatMessage
+                key={messageList.length+1}
+                author="user"
+                message={
+                    inputField!.value
+                }
+            />
+
+            let moderatorGeneratedAnswer = undefined;
+
+            const regex = new RegExp(Object.keys(replies).join("|"), "gi");
+            if (inputField!.value.match(regex)){
+                for (const [key, value] of Object.entries(replies)){
+                    if (inputField!.value.toLowerCase().includes(key)){
+                        moderatorGeneratedAnswer = <ChatMessage key={messageList.length+2} author="moderator" message={value} />
+                    }
+                }
+            } else {
+                moderatorGeneratedAnswer = <ChatMessage key={messageList.length+2} author="moderator" message="Ваш запрос не был понят. Переформулируйте его и попробуйте снова." />
+            }
+            
+            setMessageList(
+                messageList.concat(
+                    userInputedQuestion,
+                    moderatorGeneratedAnswer
+                )
+            )
+            
+            inputField!.classList.add("ChatComponent-inputFieldAwait")
             setTimeout(() => {
-                document.querySelector<HTMLInputElement>(".ChatComponent-inputField")!.setAttribute("class", "ChatComponent-inputField");
+                inputField!.setAttribute("class", "ChatComponent-inputField");
             }, 3000);
         }
-        document.querySelector<HTMLInputElement>(".ChatComponent-inputField")!.value = ""
+        inputField!.value = ""
     }
     return(
         <div className="ChatComponent-input">
-            <img src="/src/assets/user.png" className='ChatComponent-inputProflePicture'/>
+            <img src="/public/user.png" className='ChatComponent-inputProflePicture'/>
             <input type="text" placeholder="Введите текст" className="ChatComponent-inputField" />
             <button className="ChatComponent-sendButton" onClick={handleInputButtonClick}></button>
         </div>

@@ -9,7 +9,7 @@ button.greenButton{
     background-color: #76ff3340;
     box-shadow: #76ff3380 0 0 0 1px;
     color: rgb(118, 255, 51);
-    font: normal 700 1em/normal 'Rubik';
+    font: normal 700 1em/normal "Rubik", "M PLUS 1p", sans-serif;
     border: unset;
     padding: 0;
     text-transform: uppercase;

@@ -22,7 +22,7 @@ input.ChatComponent-inputField{
     flex-grow: 2;
     padding: 0 0 0 1.25em;
     height: 100%;
-    font: normal 400 1em / normal Rubik;
+    font: normal 400 1em / normal "Rubik", "M PLUS 1p", sans-serif;
     box-sizing: border-box;
 }
 
@@ -37,9 +37,11 @@ input.ChatComponent-inputField.ChatComponent-inputFieldAwait {
 @keyframes inputAwait {
     from{
         pointer-events: none;
+        opacity: 0;
     }
     to {
         pointer-events: none;
+        opacity: 0;
     }
 }
 
