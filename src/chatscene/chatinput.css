@@ -31,7 +31,7 @@ input.ChatComponent-inputField::placeholder {
 }
 
 input.ChatComponent-inputField.ChatComponent-inputFieldAwait {
-    animation: 3s linear 0s 1 normal none running inputAwait;
+    animation: 3s linear 0s 1 normal forwards running inputAwait;
 }
 
 @keyframes inputAwait {

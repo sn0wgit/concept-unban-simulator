@@ -16,8 +16,10 @@ function ChatInput(){
             const replies = {
                 "почему": "потому что",
                 "причина": "потому что",
-                "я не виновен": "Мы рассмотрели вашу заявку и согласны с вашим мнением. Ваш аккаунт будет восстановлен в течении 24 часов. Просим прощения за предоставленные неудобства.",
-                "unban": "Мы рассмотрели вашу заявку и согласны с вашим мнением. Ваш аккаунт будет восстановлен в течении 24 часов. Просим прощения за предоставленные неудобства."
+                "покажи": '🌰<iframe width="853" height="480" src="https://www.youtube.com/embed/oMCu0vfNVao" title="Tanki Online, Easter Egg?" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>',
+                "орех": '🌰<iframe width="853" height="480" src="https://www.youtube.com/embed/oMCu0vfNVao" title="Tanki Online, Easter Egg?" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>',
+                "я не виновен": "Мы рассмотрели вашу заявку и провели дополнительную проверку. По её итогам ваш аккаунт подлежит восстановлению. Ожидайте в течении 24 часов. Просим прощения за предоставленные неудобства.",
+                "unban": "Мы рассмотрели вашу заявку и провели дополнительную проверку. По её итогам ваш аккаунт подлежит восстановлению. Ожидайте в течении 24 часов. Просим прощения за предоставленные неудобства."
             }
 
             setMessageList(
@@ -39,7 +41,7 @@ function ChatInput(){
                 }
             />
 
-            let moderatorGeneratedAnswer = undefined;
+            let moderatorGeneratedAnswer = <ChatMessage key={messageList.length+2} author="moderator" message="Ваш запрос не был понят. Переформулируйте его и попробуйте снова." />;
 
             const regex = new RegExp(Object.keys(replies).join("|"), "gi");
             if (inputField!.value.match(regex)){
@@ -48,8 +50,6 @@ function ChatInput(){
                         moderatorGeneratedAnswer = <ChatMessage key={messageList.length+2} author="moderator" message={value} />
                     }
                 }
-            } else {
-                moderatorGeneratedAnswer = <ChatMessage key={messageList.length+2} author="moderator" message="Ваш запрос не был понят. Переформулируйте его и попробуйте снова." />
             }
             
             setMessageList(
@@ -60,9 +60,16 @@ function ChatInput(){
             )
             
             inputField!.classList.add("ChatComponent-inputFieldAwait")
-            setTimeout(() => {
-                inputField!.setAttribute("class", "ChatComponent-inputField");
-            }, 3000);
+
+            if (moderatorGeneratedAnswer?.props["message"].match(/Мы/g)){
+                setTimeout(() => {
+                    location.reload();
+                }, 10000)
+            } else {
+                setTimeout(() => {
+                    inputField!.setAttribute("class", "ChatComponent-inputField");
+                }, 3000);
+            }
         }
         inputField!.value = ""
     }

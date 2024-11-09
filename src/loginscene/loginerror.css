@@ -9,8 +9,8 @@
     height: auto;
     border-radius: 0.5em;
     border: 0.0625em solid #ffffff40;
-    bottom: 2em;
-    right: 1.875em;
+    left: 2em;
+    top: 6em;
 }
 
 h2.CommonEntrance-footerErrorWhiteHeading{

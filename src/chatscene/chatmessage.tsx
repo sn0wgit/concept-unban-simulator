@@ -2,20 +2,39 @@ import './chatmessage.css'
 
 interface Props{
     author: string,
-    message: string,
-    attachments?: Array<string>
+    message: string
 }
 
-function ChatMessage({author, message, attachments}: Props){
+function ChatMessage({author, message}: Props){
+
+    const authorToClass:Record<string, string> = {
+        "user": "ChatComponent-messagesMessage ChatComponent-messagesMessageUser",
+        "moderator": "ChatComponent-messagesMessage ChatComponent-messagesMessageModerator"
+    }
+
+    const authorToImage:Record<string, string> = {
+        "user": "/public/user.png",
+        "moderator": "/public/moderator.png"
+    }
+
+    function getClass(author: string){
+        if (Object.keys(authorToClass).includes(author)) {
+            return authorToClass[author]
+        }
+        return "ChatComponent-messagesMessage ChatComponent-messagesStatusMessage"
+    }
+
+    function getImageElement(author: string): JSX.Element | null{
+        if (Object.keys(authorToImage).includes(author)) {
+            return <img src={authorToImage[author]} className="ChatComponent-messagesMessageAuthorPicture" />
+        }
+        return null
+    }
 
     return(
-        <div className={
-            (author == "user") ? "ChatComponent-messagesMessage ChatComponent-messagesMessageUser" :
-            (author == "moderator") ? "ChatComponent-messagesMessage ChatComponent-messagesMessageModerator" : "ChatComponent-messagesMessage ChatComponent-messagesStatusMessage"
-        }>
-            {author == "user" || author == "moderator" ? <img src={(author == "user") ? "/public/user.png" : "/public/moderator.png"} className="ChatComponent-messagesMessageAuthorPicture" /> : null}
-            <div className="ChatComponent-messagesMessageText">{message}</div>
-            {author != "user" && author != "moderator" ? <div className="ChatComponent-messagesMessageAttachments" data-attachmentcount={attachments?.length}>{attachments}</div> : null}
+        <div className={getClass(author)}>
+            {getImageElement(author)}
+            <div className="ChatComponent-messagesMessageText" dangerouslySetInnerHTML={{__html: message}}></div>
         </div>
     )
 }
